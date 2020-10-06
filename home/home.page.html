@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="medium"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title style="color: black;font-weight: 800;">
+      Home
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="again()">
+        <ion-icon slot="icon-only" name="refresh" mode="md" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide>
+      <div class="sidepage">
+        <ion-card (click)="presentAlert()"
+          style="width:90%;height: 110px;float: left;margin-right: 0;margin-top: 15px; margin-bottom: 0px;background-color: #99E0FE;">
+          <h2 class="word_1" style="color: #148FC4;" id="userwash_at">Wash</h2>
+          <h4 class="word_1" style="color: white;" id="userwash_time"></h4>
+          <ion-icon name="arrow-forward" style="position: relative;top:-50px;left: 43%;"></ion-icon>
+        </ion-card>
+        <ion-item style="margin-top: 130px;">
+          <ion-label class="word_4" style="color:#148FC4 ;">設定時間</ion-label>
+          <ion-icon name="time" style="color: #148FC4;margin-right: -15px;" mode="md">
+          </ion-icon>
+          <ion-datetime id="washtime" [(ngModel)]="WashDate" displayFormat="HH : mm" class="word_4"
+            style="color:#148FC4" (ionChange)="washdate()"></ion-datetime>
+        </ion-item>
+
+
+        <div class="sidepage_small">
+
+
+          <ion-item detail (click)="ChoseWasher('1','washer')" id="w1" >
+            <img class="img1" id="wim1" src="assets\img\good.png">
+            <ion-label class="word_2">1F</ion-label>
+            <ion-label id="wf1" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('2','washer')" id="w2">
+            <img class="img1" id="wim2" src="assets\img\good.png">
+            <ion-label class="word_2">2F</ion-label>
+            <ion-label id="wf2" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('3','washer')" id="w3">
+            <img class="img1" id="wim3" src="assets\img\good.png">
+            <ion-label class="word_2">3F</ion-label>
+            <ion-label id="wf3" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('4','washer')" id="w4">
+            <img class="img1" id="wim4" src="assets\img\good.png">
+            <ion-label class="word_2">4F</ion-label>
+            <ion-label id="wf4" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('5','washer')" id="w5">
+            <img class="img1" id="wim5" src="assets\img\good.png">
+            <ion-label class="word_2">5F</ion-label>
+            <ion-label id="wf5" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('6','washer')" id="w6">
+            <img class="img1" id="wim6" src="assets\img\good.png">
+            <ion-label class="word_2">6F</ion-label>
+            <ion-label id="wf6" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('7','washer')" id="w7">
+            <img class="img1" id="wim7" src="assets\img\good.png">
+            <ion-label class="word_2">7F</ion-label>
+            <ion-label id="wf7" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('8','washer')" id="w8">
+            <img class="img1" id="wim8" src="assets\img\good.png">
+            <ion-label class="word_2">8F</ion-label>
+            <ion-label id="wf8" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('9','washer')" id="w9">
+            <img class="img1" id="wim9" src="assets\img\good.png">
+            <ion-label class="word_2">9F</ion-label>
+            <ion-label id="wf9" class="word_3"></ion-label>
+          </ion-item>
+
+
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="sidepage">
+        <ion-card
+          style="width:90%;height: 110px;float: right;margin-left: 0;margin-top: 15px;margin-bottom: 0px;background-color: #93D7A5;">
+          <h2 class="word_1" style="color: #38574B;" id="userdry_at">Dry</h2>
+          <h4 class="word_1" style="color: white;" id="userdry_time"></h4>
+          <ion-icon name="arrow-forward" style="position: relative;top:-50px;left: 43%;"></ion-icon>
+        </ion-card>
+        <ion-item style="margin-top: 130px;">
+          <ion-label class="word_4" style="color:#38574B">設定時間</ion-label>
+          <ion-icon name="time" style="color: #38574B;margin-right: -15px;" (click)="iconClick_1()" mode="md">
+          </ion-icon>
+          <ion-datetime [(ngModel)]="DryDate" (ionChange)="drydate()" displayFormat="HH : mm" class="word_4"
+            style="color:#38574B"></ion-datetime>
+        </ion-item>
+        <!--<ion-searchbar autocomplete color="light"></ion-searchbar>-->
+        <div class="sidepage_small">
+
+          <ion-item detail (click)="ChoseWasher('1','dryer')" id="d1">
+            <img class="img1" id="dim1" src="assets\img\good.png">
+            <ion-label class="word_2">1F</ion-label>
+            <ion-label id="df1" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('2','dryer')" id="d2">
+            <img class="img1" id="dim2" src="assets\img\good.png">
+            <ion-label class="word_2">2F</ion-label>
+            <ion-label id="df2" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('3','dryer')" id="d3">
+            <img class="img1" id="dim3" src="assets\img\good.png">
+            <ion-label class="word_2">3F</ion-label>
+            <ion-label id="df3" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('4','dryer')" id="d4">
+            <img class="img1" id="dim4" src="assets\img\good.png">
+            <ion-label class="word_2">4F</ion-label>
+            <ion-label id="df4" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('5','dryer')" id="d5">
+            <img class="img1" id="dim5" src="assets\img\good.png">
+            <ion-label class="word_2">5F</ion-label>
+            <ion-label id="df5" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('6','dryer')" id="d6">
+            <img class="img1" id="dim6" src="assets\img\good.png">
+            <ion-label class="word_2">6F</ion-label>
+            <ion-label id="df6" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('7','dryer')" id="d7">
+            <img class="img1" id="dim7" src="assets\img\good.png">
+            <ion-label class="word_2">7F</ion-label>
+            <ion-label id="df7" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('8','dryer')" id="d8">
+            <img class="img1" id="dim8" src="assets\img\good.png">
+            <ion-label class="word_2">8F</ion-label>
+            <ion-label id="df8" class="word_3"></ion-label>
+          </ion-item>
+          <ion-item detail (click)="ChoseWasher('9','dryer')" id="d9">
+            <img class="img1" id="dim9" src="assets\img\good.png">
+            <ion-label class="word_2">9F</ion-label>
+            <ion-label id="df9" class="word_3"></ion-label>
+          </ion-item>
+
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
+
+<p id="W" style="display:none"></p>
+<p id="D" style="display:none"></p>
+<p id="M" style="display:none"></p>

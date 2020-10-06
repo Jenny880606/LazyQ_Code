@@ -1,0 +1,82 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay" (ionWillOpen)="menuisopen()" id="menu" disabled="true">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title style="color: black;font-weight: 800;"> LazyQ+</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <img src="assets/img/people2.png" style="width: 70px;height: 70px;margin: 10px;">
+            <label id="userID"
+            class="word_style" style="margin-left: 15px; font-size: 28px; color: #8CA4C2;">
+              
+            </label>
+          </ion-item>
+          <div style="margin-left: 15px;margin-top: 4%;font-size: 15px;color: #8CA4C2;">
+            <label class="word_style">Money</label>
+          </div>
+          <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-label class="word_style" id="cash">
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <div style="margin-left: 15px;margin-top: 4%;font-size: 15px;color: #8CA4C2;">
+            <label class="word_style">Control</label>
+          </div>
+          <ion-item>
+            <label class="word_style">提醒</label>
+            <ion-select placeholder="?" style="margin-left: 65%; " interface="action-sheet"  (ionChange)="alertchoose($event)" id="alert" placeholder="">
+              <ion-select-option [value]='0'>Yes</ion-select-option>
+              <ion-select-option [value]='1'>No</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <label class="word_style">偏好樓層</label>
+            <ion-select placeholder="?" style="margin-left: 53%; " interface="action-sheet"  (ionChange)="perferchoose($event)" id="perfer" placeholder="">
+              <ion-select-option value="1">1F</ion-select-option>
+              <ion-select-option value="2">2F</ion-select-option>
+              <ion-select-option value="3">3F</ion-select-option>
+              <ion-select-option value="4">4F</ion-select-option>
+              <ion-select-option value="5">5F</ion-select-option>
+              <ion-select-option value="6">6F</ion-select-option>
+              <ion-select-option value="7">7F</ion-select-option>
+              <ion-select-option value="8">8F</ion-select-option>
+              <ion-select-option value="9">9F</ion-select-option>
+              
+            </ion-select>
+          </ion-item>
+          <ion-item detail (click)="logout()">
+              <label class="word_style">登出</label>
+
+          </ion-item>
+          <!--
+          <ion-item>
+            <label class="word_style">顯示樓層</label>
+            <ion-icon name="remove" style="margin-left: 27%;"></ion-icon>
+            <ion-input type="number" placeholder="輸入樓層" style="margin-left: 3%; color: #8CA4C2;" mode="md"></ion-input>
+            <ion-icon name="add" style="margin-left: 0%;"></ion-icon>
+          </ion-item>
+          <ion-item>
+            <label class="word_style" style="margin-left: 80%;color:#86888f;">6F,7F</label>
+          </ion-item>-->
+          <!--      6F,= 8%
+          <ion-item>
+              <label class="word_style" style="margin-left: 88%;color:#86888f;">7F</label>
+            </ion-item>
+          -->
+          <div style="margin-left: 15px;margin-top: 4%;font-size: 15px;color: #8CA4C2;">
+            <label> </label>
+          </div>
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

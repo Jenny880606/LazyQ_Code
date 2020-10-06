@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button  (click)="goback()"  routerLink="/home">
+        <ion-icon slot="icon-only" name="arrow-round-back" mode="md" color="medium"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color: black;font-weight: 800;">Money</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="height: 590px;">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>My balance</ion-card-subtitle>
+        <ion-card-title style="text-align: right;" id="nowM"></ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Amount of money to add </ion-card-subtitle>
+        <ion-card-title style="text-align: right;" id="addM">$ 0</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <div>
+      <ion-button class="buttons" (click)="add10()" color="light">+ 10</ion-button>
+      <ion-button class="buttons" (click)="add100()" color="light">+ 100</ion-button>
+      <ion-button class="buttons" (click)="add500()" color="light">+ 500</ion-button>
+    </div>
+    <ion-button class="button_OK" id="okgo" (click)="oktoadd()" color="light" disabled="true">OK</ion-button>
+
+  </div>
+
+
+</ion-content>
