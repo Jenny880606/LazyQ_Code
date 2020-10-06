@@ -5,7 +5,6 @@
 
 **指導老師: 葉奕成**
 
-
 * 作品理念
 <img src="pics/1.PNG" width="400px" height="250px">
 
